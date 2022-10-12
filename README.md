@@ -1,6 +1,6 @@
 # Azure Spring Apps multi region reference architecture
 
-This sample contains a Terraform template that deploys a working sample of the Azure architecture center reference architecture: [Multi region Azure Spring Apps reference architecture (coming up)](coming up). The reference architecture and sample show how to run an Azure Spring Apps workload in a multi region configuration. This allows for higher availability of the workload as well as global presence for the workload.
+This sample contains a Terraform template that deploys a working sample of the Azure architecture center reference architecture: [Multi region Azure Spring Apps reference architecture (coming up)](coming up). The reference architecture and sample show how to run an Azure Spring Apps workload in a multi-region configuration. This allows for higher availability of the workload as well as global presence for the workload.
 
 ![Multi region Spring Apps architecture diagram](./images/multi-region-spring-apps-reference-architecture.png)
 
@@ -23,11 +23,11 @@ Before you begin, make sure you have the following available:
 
 - Azure Subscription with Contributor access
 - Azure Active Directory access
-- pfx certificate for your custom domain (optional)
+- PFX certificate for your custom domain (optional)
 - GitHub Personal Access Token
 
 > [NOTE!]
-> There is also an option to install this infrastructure with a self-signed certificate. This certificate will be generated for you during the deployment. However, this setup should only be used in testing scenario's.
+> There is also an option to install this infrastructure with a self-signed certificate. This certificate will be generated for you during the deployment. However, this setup should only be used in testing scenarios.
 > Since Azure Front Door does not support self-signed certificates a host name override will take place, breaking some of the functionality of your backend applications. For production scenario's you should always apply [host name preservation](https://learn.microsoft.com/azure/architecture/best-practices/host-name-preservation).
 
 To deploy the infrastructure, you can either make use of a locally installed environment, or you can make use of a pre-configured dev container.
@@ -52,7 +52,7 @@ cd azure-spring-apps-multi-region
 
 ### 2. Review the tfvars file
 
-The [variables.tf](tf-deploy/variables.tf) and [myvars.tfvars](tf-deploy/myvars.tfvars) files in the tf-deploy directory contain the different variables you can configure. Update any values in the myvars.tfvars file to reflect the environment you would like to build. See below for an explanation of the different variables you can configure.
+The [`variables.tf`](tf-deploy/variables.tf) and [`myvars.tfvars`](tf-deploy/myvars.tfvars) files in the `tf-deploy` directory contain the different variables you can configure. Update any values in the `myvars.tfvars` file to reflect the environment you would like to build. See below for an explanation of the different variables you can configure.
 
 Some of the variables are secret values, it is better to create environment variables for these and pass them along through the command line instead of putting them in the tfvars file.
 
@@ -123,7 +123,7 @@ More info on how the terraform templates are build and how they operate can be f
 
 ### Coming up
 
-We are working on improving this sample. The ideas we have on improving:
+We are working on improving this sample. The ideas we have are:
 
 - Create Bicep templates for the same setup (in progress)
 - Make the database interchangeable for other types of databases (Cosmos DB as a first candidate)
